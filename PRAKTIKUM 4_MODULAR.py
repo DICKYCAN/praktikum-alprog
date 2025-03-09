@@ -283,11 +283,12 @@ def main():
     print("\nAverage salary per division:")
     print(df.groupby('division')['total_salary'].mean())
     
-    print(f"| {'No':<3} | {'Name':<15} | {'Position':<15} | {'division':<15} | {'Years of Service':<10} | {'Working Days':<10} | {'Status':<10} | {'Total Salary':<10} |")
+    print("=" * 120)
+    print(f"| {'No':<3} | {'Name':<10} | {'Position':<15} | {'division':<15} | {'Years of Service':<17} | {'Working Days':<13} | {'Status':<10} | {'Total Salary':<10} |")
     print("=" * 120)
     for idx, employee in enumerate(EMPLOYEE_DATA_LIST, start=1):
-        print(f"| {idx:<3} | {employee['name']:<15} | {employee['position']:<15} | {employee['division']:<15} | "
-            f"{employee['years_of_service']:<10} | {employee['working_days']:<10} | {employee['status']:<10} | {employee['total_salary']:<10,.0f} |")
+        print(f"| {idx:<3} | {employee['name']:<10} | {employee['position']:<15} | {employee['division']:<15} | "
+            f"{employee['years_of_service']:<17} | {employee['working_days']:<13} | {employee['status']:<10} | {employee['total_salary']:<10,.0f} |")
 
     # Save data to Excel
     data_to_excel(df)
